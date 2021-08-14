@@ -1,4 +1,22 @@
+const playerScoreEl= document.getElementById('playerScore');
+const playerChoiceEl = document.getElementById('playerChoice');
+const computerScoreEl = document.getElementById('computerScore');
+const computerChoiceEl = document.getElementById('computerChoice');
+const resultText = document.getElementById('resultText');
 
+const playerRock = document.getElementById('playerRock');
+const playerPaper = document.getElementById('playerPaper');
+const playerScissors = document.getElementById('playerScissors');
+const playerLizard = document.getElementById('playerLizard');
+const playerSpock = document.getElementById('playerSpok');
+
+const computerRock = document.getElementById('computerRock');
+const computerPaper = document.getElementById('computerPaper');
+const computerScissors = document.getElementById('computerScissors');
+const computerLizard = document.getElementById('computerLizard');
+const computerSpock = document.getElementById('compuerSpok');
+
+const allGamesIcons = document.querySelectorAll('.far');
 
 const choices = {
   rock: { name: 'Rock', defeats: ['scissors', 'lizard'] },
@@ -8,3 +26,35 @@ const choices = {
   spock: { name: 'Spock', defeats: ['scissors', 'rock'] },
 };
 
+function resetSelected(){
+  allGamesIcons.forEach( (icon) => {
+    icon.classList.remove('selected');
+  });
+}
+
+// Passing player slelection value and styling icons
+function select(playerChoice) { 
+  resetSelected();
+  switch(playerChoice){
+    case 'rock':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent= '--- Rock';
+      break;
+      case 'paper':
+      playerPaper.classList.add('selected');
+      playerChoiceEl.textContent= '--- Paper';
+      break;
+      case 'scissors':
+      playerScissors.classList.add('selected');
+      playerChoiceEl.textContent= '--- Scissors';
+      break;
+      case 'lizard':
+      playerLizard.classList.add('selected');
+      playerChoiceEl.textContent= '--- Lizard';
+      break;
+      case 'spok':
+      playerSpock.classList.add('selected');
+      playerChoiceEl.textContent= '--- Spock';
+      break;
+  }
+ }
