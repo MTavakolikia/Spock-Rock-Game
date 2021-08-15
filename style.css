@@ -63,7 +63,7 @@ h2 {
   cursor: pointer;
 }
 
-#player .selected{
+#player .selected,#computer .selected{
   color: black;
 }
 
